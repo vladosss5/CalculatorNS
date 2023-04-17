@@ -1,0 +1,329 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:CalculatorNS.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="850"
+             MaxHeight="850" MaxWidth="400"
+             x:Class="CalculatorNS.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+      <vm:MainViewModel />
+  </Design.DataContext>
+
+  <Panel>
+                <ExperimentalAcrylicBorder>
+                        <ExperimentalAcrylicBorder.Material>
+                                <ExperimentalAcrylicMaterial
+                                        BackgroundSource="Digger"
+                                        TintColor="Black"
+                                        TintOpacity="1"
+                                        MaterialOpacity="0.65"/>
+                        </ExperimentalAcrylicBorder.Material>
+                </ExperimentalAcrylicBorder>
+                
+                <Grid>
+                        <!-- =================Строка 0================= -->
+                        
+                        <Grid Name="TextBoxes" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+                                <!-- <Grid.RowDefinitions> -->
+                                <!--         <RowDefinition Height="50*" /> -->
+                                <!--         <RowDefinition Height="50*" /> -->
+                                <!-- </Grid.RowDefinitions> -->
+                                <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                        
+                        
+                                <TextBox Grid.Row = "0" x:Name="results"
+                                         CornerRadius="0"
+                                         FontSize="45"
+                                         TextWrapping="Wrap"/>
+                        
+                                <!-- <TextBox Grid.Row="1" -->
+                                <!--         x:Name="notationIn" -->
+                                <!-- -->
+                                <!--         CornerRadius="0" -->
+                                <!--         FontSize="35" -->
+                                <!--         Foreground="#999999" -->
+                                <!--         TextWrapping="Wrap"/> -->
+                                
+                                <ComboBox Grid.Row="0" Grid.Column="1"
+                                          x:Name="notationIn"
+                                          MinWidth="100"
+                                          CornerRadius="0"
+                                          SelectedIndex="8">
+                                        <ComboBoxItem>2</ComboBoxItem>
+                                        <ComboBoxItem>3</ComboBoxItem>
+                                        <ComboBoxItem>4</ComboBoxItem>
+                                        <ComboBoxItem>5</ComboBoxItem>
+                                        <ComboBoxItem>6</ComboBoxItem>
+                                        <ComboBoxItem>7</ComboBoxItem>
+                                        <ComboBoxItem>8</ComboBoxItem>
+                                        <ComboBoxItem>9</ComboBoxItem>
+                                        <ComboBoxItem>10</ComboBoxItem>
+                                </ComboBox>
+                        </Grid>
+                        
+                        
+                        
+                        <!-- =================Строка 1================= -->
+                        
+                        <Button Grid.Row="1" Grid.Column="0"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="Clear">
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontSize="50" 
+                                           TextAlignment="Center" 
+                                           FontFamily="Times New Roman">
+                                        C
+                                </TextBlock>
+                        </Button>
+                        
+                        <Button Grid.Row="1" Grid.Column="1"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black">
+                                <Image Source="/Assets/backspace.png"/>
+                        </Button>
+                        
+                        <Button Grid.Row="1" Grid.Column="2"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="OperationSelection"
+                                Content="%"
+                                FontSize="50"
+                                FontFamily="Times New Roman"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center">
+                                
+                        </Button>
+                        
+                        <Button Grid.Row="1" Grid.Column="3"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="OperationSelection"
+                                Content="/"
+                                FontSize="50"
+                                FontFamily="Times New Roman"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center">
+                        </Button>
+                        
+                        
+                        
+                        <!-- =================Строка 2================= -->
+                        
+                        <Button Grid.Row="2" Grid.Column="0"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="NumberSelection"
+                                Content="7"
+                                FontSize="50"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                FontFamily="Times New Roman">
+                        </Button>
+                        
+                        <Button Grid.Row="2" Grid.Column="1"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="NumberSelection"
+                                Content="8"
+                                FontSize="50"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                FontFamily="Times New Roman">
+                        </Button>
+                        
+                        <Button Grid.Row="2" Grid.Column="2"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="NumberSelection"
+                                Content="9"
+                                FontSize="50"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                FontFamily="Times New Roman">
+                        </Button>
+                        
+                        <Button Grid.Row="2" Grid.Column="3"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="OperationSelection"
+                                Content="x"
+                                FontSize="50"
+                                FontFamily="Times New Roman"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center">
+                        </Button>
+                        
+                        <!-- =================Строка 3================= -->
+                        
+                        <Button Grid.Row="3" Grid.Column="0"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="NumberSelection"
+                                Content="4"
+                                FontSize="50"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                FontFamily="Times New Roman">
+                        </Button>
+                        
+                        <Button Grid.Row="3" Grid.Column="1"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="NumberSelection"
+                                Content="5"
+                                FontSize="50"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                FontFamily="Times New Roman">
+                        </Button>
+                        
+                        <Button Grid.Row="3" Grid.Column="2"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="NumberSelection"
+                                Content="6"
+                                FontSize="50"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                FontFamily="Times New Roman">
+                        </Button>
+                        
+                        <Button Grid.Row="3" Grid.Column="3"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="OperationSelection"
+                                Content="-"
+                                FontSize="50"
+                                FontFamily="Times New Roman"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center">
+                        </Button>
+                        
+                        <!-- ================Строка 4================ -->
+                        
+                        <Button Grid.Row="4" Grid.Column="0"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="NumberSelection"
+                                Content="1"
+                                FontSize="50"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                FontFamily="Times New Roman">
+                        </Button>
+                        
+                        <Button Grid.Row="4" Grid.Column="1"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="NumberSelection"
+                                Content="2"
+                                FontSize="50"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                FontFamily="Times New Roman">
+                        </Button>
+                        
+                        <Button Grid.Row="4" Grid.Column="2"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="NumberSelection"
+                                Content="3"
+                                FontSize="50"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                FontFamily="Times New Roman">
+                        </Button>
+                        
+                        <Button Grid.Row="4" Grid.Column="3"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="OperationSelection"
+                                Content="+"
+                                FontSize="50"
+                                FontFamily="Times New Roman"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center">
+                        </Button>
+                        
+                        <!-- =============Строка 5============== -->
+                        
+                        <Button Grid.Row="5" Grid.Column="0"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black">
+                                <Image Source="/Assets/piediagram.png"/>
+                        </Button>
+                        
+                        <Button Grid.Row="5" Grid.Column="1"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black"
+                                Click="NumberSelection"
+                                Content="0"
+                                FontSize="50"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                FontFamily="Times New Roman">
+                        </Button>
+                        
+                        <Button Grid.Row="5" Grid.Column="2"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="black">
+                                <Image Source="/Assets/clock.png"/>
+                        </Button>
+                        
+                        <Button Grid.Row="5" Grid.Column="3"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                CornerRadius="10" Margin="5"
+                                Height="90" Width="90" Background="#1e1038"
+                                Click="Calculate">
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontSize="50" 
+                                           TextAlignment="Center" 
+                                           FontFamily="Times New Roman">
+                                        =
+                                </TextBlock>
+                        </Button>
+                        
+                        <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                        </Grid.ColumnDefinitions> 
+                        <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions> 
+                </Grid>
+        </Panel>
+</UserControl>
